@@ -8,24 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */; };
-		E4F56B2C2C60E42A00FE4DDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B2B2C60E42A00FE4DDF /* ContentView.swift */; };
+		E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */; };
 		E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */; };
 		E4F56B312C60E42C00FE4DDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B302C60E42C00FE4DDF /* Preview Assets.xcassets */; };
 		E4F56B382C620ECE00FE4DDF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B372C620ECE00FE4DDF /* Colors.xcassets */; };
 		E4F56B3C2C62148800FE4DDF /* Color + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B3B2C62148800FE4DDF /* Color + Extension.swift */; };
 		E4F56B3F2C6215A400FE4DDF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */; };
+		E4F56B422C621DC100FE4DDF /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B412C621DC100FE4DDF /* DIContainer.swift */; };
+		E4F56B452C621DE600FE4DDF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B442C621DE600FE4DDF /* Services.swift */; };
+		E4F56B492C621E9E00FE4DDF /* AuthenticatedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B482C621E9E00FE4DDF /* AuthenticatedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E4F56B262C60E42A00FE4DDF /* MessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerAppApp.swift; sourceTree = "<group>"; };
-		E4F56B2B2C60E42A00FE4DDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
 		E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4F56B302C60E42C00FE4DDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4F56B372C620ECE00FE4DDF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E4F56B3B2C62148800FE4DDF /* Color + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extension.swift"; sourceTree = "<group>"; };
 		E4F56B3D2C62154500FE4DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E4F56B412C621DC100FE4DDF /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		E4F56B442C621DE600FE4DDF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		E4F56B482C621E9E00FE4DDF /* AuthenticatedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +66,10 @@
 			children = (
 				E4F56B3D2C62154500FE4DDF /* Info.plist */,
 				E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */,
-				E4F56B2B2C60E42A00FE4DDF /* ContentView.swift */,
 				E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */,
+				E4F56B462C621E8500FE4DDF /* View */,
+				E4F56B432C621DD800FE4DDF /* Service */,
+				E4F56B402C621D2100FE4DDF /* General */,
 				E4F56B3A2C62147200FE4DDF /* Extension */,
 				E4F56B392C6210A700FE4DDF /* Resource */,
 				E4F56B2F2C60E42C00FE4DDF /* Preview Content */,
@@ -92,6 +100,39 @@
 				E4F56B3B2C62148800FE4DDF /* Color + Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E4F56B402C621D2100FE4DDF /* General */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56B412C621DC100FE4DDF /* DIContainer.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		E4F56B432C621DD800FE4DDF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56B442C621DE600FE4DDF /* Services.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E4F56B462C621E8500FE4DDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56B472C621E8900FE4DDF /* Authenticated */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E4F56B472C621E8900FE4DDF /* Authenticated */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */,
+				E4F56B482C621E9E00FE4DDF /* AuthenticatedViewModel.swift */,
+			);
+			path = Authenticated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4F56B2C2C60E42A00FE4DDF /* ContentView.swift in Sources */,
+				E4F56B492C621E9E00FE4DDF /* AuthenticatedViewModel.swift in Sources */,
+				E4F56B452C621DE600FE4DDF /* Services.swift in Sources */,
+				E4F56B422C621DC100FE4DDF /* DIContainer.swift in Sources */,
+				E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */,
 				E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */,
 				E4F56B3C2C62148800FE4DDF /* Color + Extension.swift in Sources */,
 			);
