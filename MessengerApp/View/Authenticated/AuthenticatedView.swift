@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AuthenticatedView: View {
     @StateObject var authViewModel : AuthenticatedViewModel
-    
     var body: some View {
         VStack {
             Text("Hello, world!")
