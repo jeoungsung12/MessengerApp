@@ -11,6 +11,9 @@
 		E4F56B2C2C60E42A00FE4DDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B2B2C60E42A00FE4DDF /* ContentView.swift */; };
 		E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */; };
 		E4F56B312C60E42C00FE4DDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B302C60E42C00FE4DDF /* Preview Assets.xcassets */; };
+		E4F56B382C620ECE00FE4DDF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B372C620ECE00FE4DDF /* Colors.xcassets */; };
+		E4F56B3C2C62148800FE4DDF /* Color + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B3B2C62148800FE4DDF /* Color + Extension.swift */; };
+		E4F56B3F2C6215A400FE4DDF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		E4F56B2B2C60E42A00FE4DDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4F56B302C60E42C00FE4DDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E4F56B372C620ECE00FE4DDF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E4F56B3B2C62148800FE4DDF /* Color + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extension.swift"; sourceTree = "<group>"; };
+		E4F56B3D2C62154500FE4DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +58,12 @@
 		E4F56B282C60E42A00FE4DDF /* MessengerApp */ = {
 			isa = PBXGroup;
 			children = (
+				E4F56B3D2C62154500FE4DDF /* Info.plist */,
 				E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */,
 				E4F56B2B2C60E42A00FE4DDF /* ContentView.swift */,
-				E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */,
+				E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */,
+				E4F56B3A2C62147200FE4DDF /* Extension */,
+				E4F56B392C6210A700FE4DDF /* Resource */,
 				E4F56B2F2C60E42C00FE4DDF /* Preview Content */,
 			);
 			path = MessengerApp;
@@ -65,6 +75,23 @@
 				E4F56B302C60E42C00FE4DDF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E4F56B392C6210A700FE4DDF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */,
+				E4F56B372C620ECE00FE4DDF /* Colors.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E4F56B3A2C62147200FE4DDF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56B3B2C62148800FE4DDF /* Color + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +154,8 @@
 			files = (
 				E4F56B312C60E42C00FE4DDF /* Preview Assets.xcassets in Resources */,
 				E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */,
+				E4F56B3F2C6215A400FE4DDF /* Launch Screen.storyboard in Resources */,
+				E4F56B382C620ECE00FE4DDF /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +168,7 @@
 			files = (
 				E4F56B2C2C60E42A00FE4DDF /* ContentView.swift in Sources */,
 				E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */,
+				E4F56B3C2C62148800FE4DDF /* Color + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +305,12 @@
 				DEVELOPMENT_TEAM = Q653PU93R6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MessengerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +335,12 @@
 				DEVELOPMENT_TEAM = Q653PU93R6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MessengerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
