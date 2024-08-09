@@ -11,6 +11,7 @@ import SwiftUI
 struct MessengerAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var container : DIContainer = .init(service: Services())
+    
     var body: some Scene {
         WindowGroup {
             AuthenticatedView(authViewModel: .init(container: container))

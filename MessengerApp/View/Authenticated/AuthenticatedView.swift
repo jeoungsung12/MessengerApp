@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct AuthenticatedView: View {
+    @EnvironmentObject var container : DIContainer
     @StateObject var authViewModel : AuthenticatedViewModel
     var body: some View {
-        switch authViewModel.authenticationState {
-        case .unauthenticated:
-            LoginIntroView()
-        case .authenticated:
-            MainTabView()
+        VStack {
+            switch authViewModel.authenticationState {
+            case .unauthenticated:
+                LoginIntroView()
+                    .environmentObject(authViewModel)
+            case .authenticated:
+                MainTabView()
+                    .environmentObject(authViewModel)
+            }
+        }
+        .onAppear {
+            authViewModel.send(action: .checkAuthenticationState)
         }
     }
 }
