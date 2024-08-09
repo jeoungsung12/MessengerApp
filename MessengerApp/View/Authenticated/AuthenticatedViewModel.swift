@@ -39,11 +39,13 @@ class AuthenticatedViewModel: ObservableObject {
 
     func send(action: Action) {
         switch action {
+            
         case .checkAuthenticationState:
             if let userId = container.service.authService.checkAuthenticationState() {
                 self.userId = userId
                 self.authenticationState = .authenticated
             }
+            
         case .googleLogin:
             isLoading = true
             container.service.authService.signInWithGoogle()
@@ -56,9 +58,11 @@ class AuthenticatedViewModel: ObservableObject {
                     self?.userId = user.id
                     self?.authenticationState = .authenticated
                 }.store(in: &subscriptions)
+            
         case let .appleLogin(request):
             let nonce = container.service.authService.handleSignInWithAppleRequest(request)
             self.currentNonce = nonce
+            
         case let .appleLoginCompletion(result):
             if case let .success(authorization) = result {
                 guard let nonce = currentNonce else { return }
@@ -75,6 +79,7 @@ class AuthenticatedViewModel: ObservableObject {
             } else if case let .failure(error) = result {
                 print(error.localizedDescription)
             }
+            
         case .logout:
             container.service.authService.logout()
                 .sink { completion in
