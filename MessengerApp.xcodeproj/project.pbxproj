@@ -17,6 +17,20 @@
 		E4F56B422C621DC100FE4DDF /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B412C621DC100FE4DDF /* DIContainer.swift */; };
 		E4F56B452C621DE600FE4DDF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B442C621DE600FE4DDF /* Services.swift */; };
 		E4F56B492C621E9E00FE4DDF /* AuthenticatedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B482C621E9E00FE4DDF /* AuthenticatedViewModel.swift */; };
+		E4F56BAF2C63602C00FE4DDF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E4F56BAE2C63602C00FE4DDF /* FirebaseAuth */; };
+		E4F56BB12C63602C00FE4DDF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E4F56BB02C63602C00FE4DDF /* FirebaseFirestore */; };
+		E4F56BB32C63604700FE4DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BB22C63604700FE4DDF /* AppDelegate.swift */; };
+		E4F56BB72C6362DF00FE4DDF /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BB62C6362DF00FE4DDF /* AuthenticationService.swift */; };
+		E4F56BBB2C63659600FE4DDF /* LoginIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BBA2C63659600FE4DDF /* LoginIntroView.swift */; };
+		E4F56BBD2C6365A800FE4DDF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BBC2C6365A800FE4DDF /* MainTabView.swift */; };
+		E4F56BC12C636DF600FE4DDF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BC02C636DF600FE4DDF /* LoginView.swift */; };
+		E4F56BC32C6492ED00FE4DDF /* LoginButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BC22C6492ED00FE4DDF /* LoginButtonStyle.swift */; };
+		E4F56BC62C649B8C00FE4DDF /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E4F56BC52C649B8C00FE4DDF /* GoogleSignIn */; };
+		E4F56BC82C649B8C00FE4DDF /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4F56BC72C649B8C00FE4DDF /* GoogleSignInSwift */; };
+		E4F56BCB2C649D8100FE4DDF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BCA2C649D8100FE4DDF /* User.swift */; };
+		E4F56BCD2C649DE300FE4DDF /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BCC2C649DE300FE4DDF /* ServiceError.swift */; };
+		E4F56BD12C65F78100FE4DDF /* randomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD02C65F78100FE4DDF /* randomNonceString.swift */; };
+		E4F56BD32C65F7A000FE4DDF /* sha256.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD22C65F7A000FE4DDF /* sha256.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +46,17 @@
 		E4F56B412C621DC100FE4DDF /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		E4F56B442C621DE600FE4DDF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		E4F56B482C621E9E00FE4DDF /* AuthenticatedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedViewModel.swift; sourceTree = "<group>"; };
+		E4F56BB22C63604700FE4DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4F56BB62C6362DF00FE4DDF /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		E4F56BBA2C63659600FE4DDF /* LoginIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntroView.swift; sourceTree = "<group>"; };
+		E4F56BBC2C6365A800FE4DDF /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		E4F56BC02C636DF600FE4DDF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E4F56BC22C6492ED00FE4DDF /* LoginButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonStyle.swift; sourceTree = "<group>"; };
+		E4F56BCA2C649D8100FE4DDF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E4F56BCC2C649DE300FE4DDF /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		E4F56BCE2C65F54700FE4DDF /* MessengerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessengerApp.entitlements; sourceTree = "<group>"; };
+		E4F56BD02C65F78100FE4DDF /* randomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomNonceString.swift; sourceTree = "<group>"; };
+		E4F56BD22C65F7A000FE4DDF /* sha256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sha256.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F56BAF2C63602C00FE4DDF /* FirebaseAuth in Frameworks */,
+				E4F56BB12C63602C00FE4DDF /* FirebaseFirestore in Frameworks */,
+				E4F56BC62C649B8C00FE4DDF /* GoogleSignIn in Frameworks */,
+				E4F56BC82C649B8C00FE4DDF /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,10 +93,14 @@
 		E4F56B282C60E42A00FE4DDF /* MessengerApp */ = {
 			isa = PBXGroup;
 			children = (
+				E4F56BCE2C65F54700FE4DDF /* MessengerApp.entitlements */,
 				E4F56B3D2C62154500FE4DDF /* Info.plist */,
+				E4F56BB22C63604700FE4DDF /* AppDelegate.swift */,
 				E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */,
 				E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */,
 				E4F56B462C621E8500FE4DDF /* View */,
+				E4F56BCF2C65F75C00FE4DDF /* Util */,
+				E4F56BC92C649D7000FE4DDF /* Model */,
 				E4F56B432C621DD800FE4DDF /* Service */,
 				E4F56B402C621D2100FE4DDF /* General */,
 				E4F56B3A2C62147200FE4DDF /* Extension */,
@@ -114,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				E4F56B442C621DE600FE4DDF /* Services.swift */,
+				E4F56BB62C6362DF00FE4DDF /* AuthenticationService.swift */,
+				E4F56BCC2C649DE300FE4DDF /* ServiceError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -122,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				E4F56B472C621E8900FE4DDF /* Authenticated */,
+				E4F56BB92C63656A00FE4DDF /* MainTabView */,
+				E4F56BB82C63656600FE4DDF /* Login */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +170,41 @@
 				E4F56B482C621E9E00FE4DDF /* AuthenticatedViewModel.swift */,
 			);
 			path = Authenticated;
+			sourceTree = "<group>";
+		};
+		E4F56BB82C63656600FE4DDF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56BBA2C63659600FE4DDF /* LoginIntroView.swift */,
+				E4F56BC02C636DF600FE4DDF /* LoginView.swift */,
+				E4F56BC22C6492ED00FE4DDF /* LoginButtonStyle.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E4F56BB92C63656A00FE4DDF /* MainTabView */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56BBC2C6365A800FE4DDF /* MainTabView.swift */,
+			);
+			path = MainTabView;
+			sourceTree = "<group>";
+		};
+		E4F56BC92C649D7000FE4DDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56BCA2C649D8100FE4DDF /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E4F56BCF2C65F75C00FE4DDF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56BD02C65F78100FE4DDF /* randomNonceString.swift */,
+				E4F56BD22C65F7A000FE4DDF /* sha256.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +223,12 @@
 			dependencies = (
 			);
 			name = MessengerApp;
+			packageProductDependencies = (
+				E4F56BAE2C63602C00FE4DDF /* FirebaseAuth */,
+				E4F56BB02C63602C00FE4DDF /* FirebaseFirestore */,
+				E4F56BC52C649B8C00FE4DDF /* GoogleSignIn */,
+				E4F56BC72C649B8C00FE4DDF /* GoogleSignInSwift */,
+			);
 			productName = MessengerApp;
 			productReference = E4F56B262C60E42A00FE4DDF /* MessengerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -179,6 +257,10 @@
 				Base,
 			);
 			mainGroup = E4F56B1D2C60E42A00FE4DDF;
+			packageReferences = (
+				E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E4F56BC42C649B8B00FE4DDF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = E4F56B272C60E42A00FE4DDF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,12 +289,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F56BD32C65F7A000FE4DDF /* sha256.swift in Sources */,
+				E4F56BCB2C649D8100FE4DDF /* User.swift in Sources */,
+				E4F56BBB2C63659600FE4DDF /* LoginIntroView.swift in Sources */,
 				E4F56B492C621E9E00FE4DDF /* AuthenticatedViewModel.swift in Sources */,
 				E4F56B452C621DE600FE4DDF /* Services.swift in Sources */,
 				E4F56B422C621DC100FE4DDF /* DIContainer.swift in Sources */,
 				E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */,
+				E4F56BB32C63604700FE4DDF /* AppDelegate.swift in Sources */,
+				E4F56BB72C6362DF00FE4DDF /* AuthenticationService.swift in Sources */,
+				E4F56BC32C6492ED00FE4DDF /* LoginButtonStyle.swift in Sources */,
 				E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */,
+				E4F56BD12C65F78100FE4DDF /* randomNonceString.swift in Sources */,
+				E4F56BC12C636DF600FE4DDF /* LoginView.swift in Sources */,
 				E4F56B3C2C62148800FE4DDF /* Color + Extension.swift in Sources */,
+				E4F56BCD2C649DE300FE4DDF /* ServiceError.swift in Sources */,
+				E4F56BBD2C6365A800FE4DDF /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MessengerApp/MessengerApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MessengerApp/Preview Content\"";
@@ -373,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MessengerApp/MessengerApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MessengerApp/Preview Content\"";
@@ -420,6 +514,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+		E4F56BC42C649B8B00FE4DDF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4F56BAE2C63602C00FE4DDF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E4F56BB02C63602C00FE4DDF /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E4F56BC52C649B8C00FE4DDF /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F56BC42C649B8B00FE4DDF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		E4F56BC72C649B8C00FE4DDF /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F56BC42C649B8B00FE4DDF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4F56B1E2C60E42A00FE4DDF /* Project object */;
 }

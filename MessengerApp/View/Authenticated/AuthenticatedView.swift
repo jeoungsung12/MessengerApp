@@ -8,18 +8,27 @@
 import SwiftUI
 
 struct AuthenticatedView: View {
+    @EnvironmentObject var container : DIContainer
     @StateObject var authViewModel : AuthenticatedViewModel
-    
     var body: some View {
         VStack {
-            Text("Hello, world!")
+            switch authViewModel.authenticationState {
+            case .unauthenticated:
+                LoginIntroView()
+                    .environmentObject(authViewModel)
+            case .authenticated:
+                MainTabView()
+                    .environmentObject(authViewModel)
+            }
         }
-        .padding()
+        .onAppear {
+            authViewModel.send(action: .checkAuthenticationState)
+        }
     }
 }
 
 struct AuthenticatedView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticatedView(authViewModel: .init())
+        AuthenticatedView(authViewModel: .init(container: .init(service: StubService())))
     }
 }
