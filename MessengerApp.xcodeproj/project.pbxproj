@@ -31,6 +31,10 @@
 		E4F56BCD2C649DE300FE4DDF /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BCC2C649DE300FE4DDF /* ServiceError.swift */; };
 		E4F56BD12C65F78100FE4DDF /* randomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD02C65F78100FE4DDF /* randomNonceString.swift */; };
 		E4F56BD32C65F7A000FE4DDF /* sha256.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD22C65F7A000FE4DDF /* sha256.swift */; };
+		E4F56BD72C673C6E00FE4DDF /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD62C673C6E00FE4DDF /* MainTabType.swift */; };
+		E4F56BDA2C673DAC00FE4DDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD92C673DAC00FE4DDF /* HomeView.swift */; };
+		E4F56BDD2C673DE000FE4DDF /* ChatListiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BDC2C673DE000FE4DDF /* ChatListiView.swift */; };
+		E4F56BDF2C67406A00FE4DDF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BDE2C67406A00FE4DDF /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,10 @@
 		E4F56BCE2C65F54700FE4DDF /* MessengerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessengerApp.entitlements; sourceTree = "<group>"; };
 		E4F56BD02C65F78100FE4DDF /* randomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomNonceString.swift; sourceTree = "<group>"; };
 		E4F56BD22C65F7A000FE4DDF /* sha256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sha256.swift; sourceTree = "<group>"; };
+		E4F56BD62C673C6E00FE4DDF /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
+		E4F56BD92C673DAC00FE4DDF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E4F56BDC2C673DE000FE4DDF /* ChatListiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListiView.swift; sourceTree = "<group>"; };
+		E4F56BDE2C67406A00FE4DDF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,8 @@
 			children = (
 				E4F56B472C621E8900FE4DDF /* Authenticated */,
 				E4F56BB92C63656A00FE4DDF /* MainTabView */,
+				E4F56BDB2C673DCF00FE4DDF /* ChatList */,
+				E4F56BD82C673DA100FE4DDF /* Home */,
 				E4F56BB82C63656600FE4DDF /* Login */,
 			);
 			path = View;
@@ -186,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				E4F56BBC2C6365A800FE4DDF /* MainTabView.swift */,
+				E4F56BD62C673C6E00FE4DDF /* MainTabType.swift */,
 			);
 			path = MainTabView;
 			sourceTree = "<group>";
@@ -205,6 +216,23 @@
 				E4F56BD22C65F7A000FE4DDF /* sha256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		E4F56BD82C673DA100FE4DDF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56BD92C673DAC00FE4DDF /* HomeView.swift */,
+				E4F56BDE2C67406A00FE4DDF /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E4F56BDB2C673DCF00FE4DDF /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56BDC2C673DE000FE4DDF /* ChatListiView.swift */,
+			);
+			path = ChatList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,13 +318,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F56BD32C65F7A000FE4DDF /* sha256.swift in Sources */,
+				E4F56BD72C673C6E00FE4DDF /* MainTabType.swift in Sources */,
 				E4F56BCB2C649D8100FE4DDF /* User.swift in Sources */,
+				E4F56BDF2C67406A00FE4DDF /* HomeViewModel.swift in Sources */,
 				E4F56BBB2C63659600FE4DDF /* LoginIntroView.swift in Sources */,
 				E4F56B492C621E9E00FE4DDF /* AuthenticatedViewModel.swift in Sources */,
+				E4F56BDD2C673DE000FE4DDF /* ChatListiView.swift in Sources */,
 				E4F56B452C621DE600FE4DDF /* Services.swift in Sources */,
 				E4F56B422C621DC100FE4DDF /* DIContainer.swift in Sources */,
 				E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */,
 				E4F56BB32C63604700FE4DDF /* AppDelegate.swift in Sources */,
+				E4F56BDA2C673DAC00FE4DDF /* HomeView.swift in Sources */,
 				E4F56BB72C6362DF00FE4DDF /* AuthenticationService.swift in Sources */,
 				E4F56BC32C6492ED00FE4DDF /* LoginButtonStyle.swift in Sources */,
 				E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */,
