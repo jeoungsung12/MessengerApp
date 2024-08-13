@@ -10,6 +10,7 @@ import SwiftUI
 struct AuthenticatedView: View {
     @EnvironmentObject var container : DIContainer
     @StateObject var authViewModel : AuthenticatedViewModel
+    
     var body: some View {
         VStack {
             switch authViewModel.authenticationState {
@@ -23,6 +24,7 @@ struct AuthenticatedView: View {
         }
         .onAppear {
             authViewModel.send(action: .checkAuthenticationState)
+//            authViewModel.send(action: .logout)
         }
     }
 }
