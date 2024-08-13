@@ -9,7 +9,49 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel : HomeViewModel
+    
     var body: some View {
+        NavigationStack {
+            contentView
+                .fullScreenCover(item: $viewModel.modalDestination) {
+                    switch $0 {
+                    case .myProfile:
+                        MyProfileView()
+                    case let .otherProfile(userId):
+                        OtherProfileView()
+                    }
+                }
+        }
+    }
+    
+    @ViewBuilder
+    var contentView: some View {
+        switch viewModel.phase {
+        case .notRequested:
+            PlaceholderView()
+                .onAppear {
+                    viewModel.send(action: .load)
+                }
+        case .loading:
+            LoadingView()
+        case .success:
+            loadedView
+                .toolbar {
+                    Image("bookmark")
+                    Image("notifications")
+                    Image("person_add")
+                    Button {
+                        // TODO:
+                    } label: {
+                        Image("settings")
+                    }
+                }
+        case .fail:
+            ErrorView()
+        }
+    }
+    
+    var loadedView: some View {
         NavigationStack {
             ScrollView {
                 profileView
@@ -29,33 +71,30 @@ struct HomeView: View {
                     Spacer(minLength: 89)
                     emptyView
                 } else {
-                    ForEach(viewModel.users, id: \.id) { user in
-                        HStack(spacing: 8) {
-                            Image("person")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
-                            Text(user.name)
-                                .font(.system(size: 12))
-                                .foregroundColor(.black)
-                            Spacer()
+                    LazyVStack {
+                        ForEach(viewModel.users, id: \.id) { user in
+                            Button {
+                                viewModel.send(action: .presentOtherProfileView(user.id))
+                            } label: {
+                                HStack(spacing: 8) {
+                                    Image("person")
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(Circle())
+                                    Text(user.name)
+                                        .font(.system(size: 12))
+                                        .foregroundColor(.black)
+                                    Spacer()
+                                }
+                            }
+                            .padding(.horizontal, 30)
                         }
-                        .padding(.horizontal, 30)
                     }
-                }
-            }
-            .toolbar {
-                Image("bookmark")
-                Image("notifications")
-                Image("person_add")
-                Button {
-                    // TODO:
-                } label: {
-                    Image("settings")
                 }
             }
         }
     }
+    
     var profileView: some View {
         HStack {
             VStack(alignment: .leading, spacing: 7) {
@@ -74,6 +113,9 @@ struct HomeView: View {
                 .clipShape(Circle())
         }
         .padding(.horizontal, 30)
+        .onTapGesture {
+            
+        }
     }
     var searchButton : some View {
         ZStack {
@@ -120,6 +162,8 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView(viewModel: .init())
+struct HomeView_Preview: PreviewProvider {
+    static var previews: some View {
+        HomeView(viewModel: .init(container: .init(service: StubService()), userId: ""))
+    }
 }

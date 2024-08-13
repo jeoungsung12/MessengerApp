@@ -9,13 +9,16 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab : MainTabType = .home
+    @EnvironmentObject var container : DIContainer
+    @EnvironmentObject var authViewModel : AuthenticatedViewModel
+    
     var body: some View {
         TabView(selection: $selectedTab)  {
             ForEach(MainTabType.allCases, id: \.self) { tab in
                 Group {
                     switch tab {
                     case .home:
-                        HomeView(viewModel: .init())
+                        HomeView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
                     case .chat:
                         ChatListiView()
                     case .phone:
