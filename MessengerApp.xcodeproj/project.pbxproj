@@ -48,6 +48,7 @@
 		E4F56BFD2C6BB7DD00FE4DDF /* HomeModalDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BFC2C6BB7DD00FE4DDF /* HomeModalDestination.swift */; };
 		E4F56C002C6BB94E00FE4DDF /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BFF2C6BB94D00FE4DDF /* MyProfileView.swift */; };
 		E4F56C022C6BB95D00FE4DDF /* OtherProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56C012C6BB95D00FE4DDF /* OtherProfileView.swift */; };
+		E4F56C062C6C925100FE4DDF /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56C052C6C925100FE4DDF /* ContactService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		E4F56BFC2C6BB7DD00FE4DDF /* HomeModalDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModalDestination.swift; sourceTree = "<group>"; };
 		E4F56BFF2C6BB94D00FE4DDF /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		E4F56C012C6BB95D00FE4DDF /* OtherProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileView.swift; sourceTree = "<group>"; };
+		E4F56C052C6C925100FE4DDF /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				E4F56BE62C674DE800FE4DDF /* UserService.swift */,
 				E4F56BB62C6362DF00FE4DDF /* AuthenticationService.swift */,
 				E4F56BCC2C649DE300FE4DDF /* ServiceError.swift */,
+				E4F56C052C6C925100FE4DDF /* ContactService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				E4F56BFB2C6BB5BE00FE4DDF /* ErrorView.swift in Sources */,
 				E4F56BF92C6BB54800FE4DDF /* LoadingView.swift in Sources */,
 				E4F56BF42C6BB36D00FE4DDF /* Phase.swift in Sources */,
+				E4F56C062C6C925100FE4DDF /* ContactService.swift in Sources */,
 				E4F56BDF2C67406A00FE4DDF /* HomeViewModel.swift in Sources */,
 				E4F56BBB2C63659600FE4DDF /* LoginIntroView.swift in Sources */,
 				E4F56BF72C6BB4F600FE4DDF /* PlaceholderView.swift in Sources */,
@@ -566,6 +570,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MessengerApp/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "친구 목록을 가져옵니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
@@ -597,6 +602,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MessengerApp/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "친구 목록을 가져옵니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
