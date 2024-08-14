@@ -10,6 +10,8 @@
 		E48131982C6CA80200A72BEF /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131972C6CA80200A72BEF /* MyProfileViewModel.swift */; };
 		E481319A2C6CAA6600A72BEF /* MyProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131992C6CAA6600A72BEF /* MyProfileMenuType.swift */; };
 		E481319F2C6CB1FB00A72BEF /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481319E2C6CB1FB00A72BEF /* MyProfileDescEditView.swift */; };
+		E48131A32C6CFABB00A72BEF /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131A22C6CFABB00A72BEF /* PhotoPickerService.swift */; };
+		E48131A62C6CFBB500A72BEF /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131A52C6CFBB500A72BEF /* PhotoImage.swift */; };
 		E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */; };
 		E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */; };
 		E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		E48131972C6CA80200A72BEF /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		E48131992C6CAA6600A72BEF /* MyProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileMenuType.swift; sourceTree = "<group>"; };
 		E481319E2C6CB1FB00A72BEF /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
+		E48131A22C6CFABB00A72BEF /* PhotoPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerService.swift; sourceTree = "<group>"; };
+		E48131A52C6CFBB500A72BEF /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
 		E4F56B262C60E42A00FE4DDF /* MessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerAppApp.swift; sourceTree = "<group>"; };
 		E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,15 @@
 				E481319E2C6CB1FB00A72BEF /* MyProfileDescEditView.swift */,
 			);
 			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		E48131A42C6CFBA000A72BEF /* PhotoService */ = {
+			isa = PBXGroup;
+			children = (
+				E48131A22C6CFABB00A72BEF /* PhotoPickerService.swift */,
+				E48131A52C6CFBB500A72BEF /* PhotoImage.swift */,
+			);
+			path = PhotoService;
 			sourceTree = "<group>";
 		};
 		E4F56B1D2C60E42A00FE4DDF = {
@@ -204,11 +217,12 @@
 		E4F56B432C621DD800FE4DDF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				E48131A42C6CFBA000A72BEF /* PhotoService */,
 				E4F56B442C621DE600FE4DDF /* Services.swift */,
 				E4F56BE62C674DE800FE4DDF /* UserService.swift */,
 				E4F56BB62C6362DF00FE4DDF /* AuthenticationService.swift */,
-				E4F56BCC2C649DE300FE4DDF /* ServiceError.swift */,
 				E4F56C052C6C925100FE4DDF /* ContactService.swift */,
+				E4F56BCC2C649DE300FE4DDF /* ServiceError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -419,6 +433,7 @@
 				E4F56BEC2C6753F800FE4DDF /* DBError.swift in Sources */,
 				E4F56BD32C65F7A000FE4DDF /* sha256.swift in Sources */,
 				E4F56BD72C673C6E00FE4DDF /* MainTabType.swift in Sources */,
+				E48131A32C6CFABB00A72BEF /* PhotoPickerService.swift in Sources */,
 				E4F56BCB2C649D8100FE4DDF /* User.swift in Sources */,
 				E4F56BEA2C6753A700FE4DDF /* UserObject.swift in Sources */,
 				E4F56BFB2C6BB5BE00FE4DDF /* ErrorView.swift in Sources */,
@@ -437,6 +452,7 @@
 				E4F56B422C621DC100FE4DDF /* DIContainer.swift in Sources */,
 				E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */,
 				E4F56BB32C63604700FE4DDF /* AppDelegate.swift in Sources */,
+				E48131A62C6CFBB500A72BEF /* PhotoImage.swift in Sources */,
 				E4F56BDA2C673DAC00FE4DDF /* HomeView.swift in Sources */,
 				E48131982C6CA80200A72BEF /* MyProfileViewModel.swift in Sources */,
 				E4F56BB72C6362DF00FE4DDF /* AuthenticationService.swift in Sources */,
