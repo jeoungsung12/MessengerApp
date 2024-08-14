@@ -11,7 +11,7 @@ import AuthenticationServices
 struct LoginView: View {
     var body: some View {
         @Environment(\.dismiss) var dismiss
-        var authViewModel = AuthenticatedViewModel(container: .init(service: Services()))
+        @EnvironmentObject var authViewModel: AuthenticatedViewModel
         
         
         VStack(alignment: .leading, spacing: 20) {
@@ -64,6 +64,9 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    LoginView()
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+            .environmentObject(AuthenticatedViewModel(container: .init(service: Services())))
+    }
 }
