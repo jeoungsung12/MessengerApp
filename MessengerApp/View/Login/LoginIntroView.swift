@@ -6,32 +6,49 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginIntroView: View {
     @State private var isPresentedLoginView : Bool = false
+    @EnvironmentObject var authViewModel: AuthenticatedViewModel
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 20) {
-                Spacer()
-                
-                Text("환영합니다.")
-                    .font(.system(size: 26, weight: .bold))
+        VStack(alignment: .leading, spacing: 20) {
+            Group {
+                Text("로그인")
+                    .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
-                Text("무료 메시지와 영상통화, 음성통화를 부담없이 즐겨보세요!")
-                    .font(.system(size: 12, weight: .bold))
+                    .padding(.top, 80)
+                
+                Text("아래 제공되는 서비스로 로그인을 해주세요.")
+                    .font(.system(size: 14, weight: .bold))
                     .foregroundColor(.gray)
-                
-                Spacer()
-                
-                Button {
-                    self.isPresentedLoginView.toggle()
-                } label: {
-                    Text("로그인")
-                }.buttonStyle(LoginButtonStyle(textColor: .Color7, borderColor: .Color7))
             }
-            .navigationDestination(isPresented: $isPresentedLoginView) {
-                LoginView()
+            .padding(.horizontal, 30)
+            
+            Spacer()
+            
+            Button(action: {
+                authViewModel.send(action: .googleLogin)
+                //Thread 1: Fatal error: No ObservableObject of type AuthenticatedViewModel found. A View.environmentObject(_:) for AuthenticatedViewModel may be missing as an ancestor of this view.
+            }, label: {
+                Text("Google로 로그인")
+            }).buttonStyle(LoginButtonStyle(textColor: .black, borderColor: .gray))
+            
+            SignInWithAppleButton { request in
+                authViewModel.send(action: .appleLogin(request))
+            } onCompletion: { result in
+                authViewModel.send(action: .appleLoginCompletion(result))
+            }
+            .cornerRadius(5)
+            .frame(height: 50)
+            .padding(.horizontal, 15)
+
+        }
+        .navigationBarBackButtonHidden()
+        .overlay {
+            if authViewModel.isLoading {
+                ProgressView()
             }
         }
     }
