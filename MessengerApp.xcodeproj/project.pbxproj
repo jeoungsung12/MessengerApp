@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E48131982C6CA80200A72BEF /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131972C6CA80200A72BEF /* MyProfileViewModel.swift */; };
+		E481319A2C6CAA6600A72BEF /* MyProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131992C6CAA6600A72BEF /* MyProfileMenuType.swift */; };
 		E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */; };
 		E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */; };
 		E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E48131972C6CA80200A72BEF /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		E48131992C6CAA6600A72BEF /* MyProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileMenuType.swift; sourceTree = "<group>"; };
 		E4F56B262C60E42A00FE4DDF /* MessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerAppApp.swift; sourceTree = "<group>"; };
 		E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E481319B2C6CAA9200A72BEF /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				E4F56BFF2C6BB94D00FE4DDF /* MyProfileView.swift */,
+				E48131972C6CA80200A72BEF /* MyProfileViewModel.swift */,
+				E48131992C6CAA6600A72BEF /* MyProfileMenuType.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
 		E4F56B1D2C60E42A00FE4DDF = {
 			isa = PBXGroup;
 			children = (
@@ -310,7 +324,7 @@
 		E4F56BFE2C6BB94200FE4DDF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				E4F56BFF2C6BB94D00FE4DDF /* MyProfileView.swift */,
+				E481319B2C6CAA9200A72BEF /* MyProfile */,
 				E4F56C012C6BB95D00FE4DDF /* OtherProfileView.swift */,
 			);
 			path = Profile;
@@ -421,6 +435,7 @@
 				E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */,
 				E4F56BB32C63604700FE4DDF /* AppDelegate.swift in Sources */,
 				E4F56BDA2C673DAC00FE4DDF /* HomeView.swift in Sources */,
+				E48131982C6CA80200A72BEF /* MyProfileViewModel.swift in Sources */,
 				E4F56BB72C6362DF00FE4DDF /* AuthenticationService.swift in Sources */,
 				E4F56BEE2C67555800FE4DDF /* Constant.swift in Sources */,
 				E4F56BC32C6492ED00FE4DDF /* LoginButtonStyle.swift in Sources */,
@@ -431,6 +446,7 @@
 				E4F56BCD2C649DE300FE4DDF /* ServiceError.swift in Sources */,
 				E4F56C002C6BB94E00FE4DDF /* MyProfileView.swift in Sources */,
 				E4F56BBD2C6365A800FE4DDF /* MainTabView.swift in Sources */,
+				E481319A2C6CAA6600A72BEF /* MyProfileMenuType.swift in Sources */,
 				E4F56C022C6BB95D00FE4DDF /* OtherProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
