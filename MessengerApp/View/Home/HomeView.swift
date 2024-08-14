@@ -115,7 +115,7 @@ struct HomeView: View {
         }
         .padding(.horizontal, 30)
         .onTapGesture {
-            
+            viewModel.send(action: .presentMyProfileView)
         }
     }
     var searchButton : some View {

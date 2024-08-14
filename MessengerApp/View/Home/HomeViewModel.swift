@@ -67,7 +67,6 @@ class HomeViewModel : ObservableObject {
                     self?.users = users
                 }.store(in: &subscriptions)
 
-
         case .presentMyProfileView:
             self.modalDestination = .myProfile
         case let .presentOtherProfileView(userId):

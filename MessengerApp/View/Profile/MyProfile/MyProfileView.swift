@@ -39,11 +39,14 @@ struct MyProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        
+                        dismiss()
                     }, label: {
                         Image("close")
                     })
                 }
+            }
+            .task {
+                await viewModel.getUser()
             }
         }
     }
@@ -67,12 +70,19 @@ struct MyProfileView: View {
     
     var descriptionView: some View {
         Button(action: {
-            
+            viewModel.isPresentedDescEditView.toggle()
         }, label: {
             Text(viewModel.userInfo?.description ?? "상태메시지를 입력해주세요.")
                 .font(.system(size: 14))
                 .foregroundStyle(.white)
         })
+        .sheet(isPresented: $viewModel.isPresentedDescEditView) {
+            MyProfileDescEditView(description: viewModel.userInfo?.description ?? "") { willBeDesc in
+                Task {
+                    await viewModel.updateDescription(willBeDesc)
+                }
+            }
+        }
     }
     
     var menuView: some View {
