@@ -14,6 +14,9 @@
 		E48131A62C6CFBB500A72BEF /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131A52C6CFBB500A72BEF /* PhotoImage.swift */; };
 		E48131AE2C72435400A72BEF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E48131AD2C72435400A72BEF /* FirebaseStorage */; };
 		E48131B02C72435400A72BEF /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E48131AF2C72435400A72BEF /* FirebaseStorageCombine-Community */; };
+		E48131B62C7243C800A72BEF /* UploadProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131B52C7243C800A72BEF /* UploadProvider.swift */; };
+		E48131B82C72443600A72BEF /* UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131B72C72443600A72BEF /* UploadService.swift */; };
+		E48131BB2C7244DB00A72BEF /* UploadSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131BA2C7244DB00A72BEF /* UploadSourceType.swift */; };
 		E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */; };
 		E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */; };
 		E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */; };
@@ -64,6 +67,9 @@
 		E481319E2C6CB1FB00A72BEF /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
 		E48131A22C6CFABB00A72BEF /* PhotoPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerService.swift; sourceTree = "<group>"; };
 		E48131A52C6CFBB500A72BEF /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
+		E48131B52C7243C800A72BEF /* UploadProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProvider.swift; sourceTree = "<group>"; };
+		E48131B72C72443600A72BEF /* UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadService.swift; sourceTree = "<group>"; };
+		E48131BA2C7244DB00A72BEF /* UploadSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSourceType.swift; sourceTree = "<group>"; };
 		E4F56B262C60E42A00FE4DDF /* MessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerAppApp.swift; sourceTree = "<group>"; };
 		E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -144,6 +150,31 @@
 			path = PhotoService;
 			sourceTree = "<group>";
 		};
+		E48131B32C7243A300A72BEF /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				E48131B42C7243B000A72BEF /* Upload */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		E48131B42C7243B000A72BEF /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				E48131B52C7243C800A72BEF /* UploadProvider.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		E48131B92C7244CD00A72BEF /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				E48131B72C72443600A72BEF /* UploadService.swift */,
+				E48131BA2C7244DB00A72BEF /* UploadSourceType.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
 		E4F56B1D2C60E42A00FE4DDF = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +200,7 @@
 				E4F56BB22C63604700FE4DDF /* AppDelegate.swift */,
 				E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */,
 				E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */,
+				E48131B32C7243A300A72BEF /* Provider */,
 				E4F56BE32C674D9B00FE4DDF /* Repository */,
 				E4F56B462C621E8500FE4DDF /* View */,
 				E4F56BCF2C65F75C00FE4DDF /* Util */,
@@ -221,6 +253,7 @@
 		E4F56B432C621DD800FE4DDF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				E48131B92C7244CD00A72BEF /* Upload */,
 				E48131A42C6CFBA000A72BEF /* PhotoService */,
 				E4F56B442C621DE600FE4DDF /* Services.swift */,
 				E4F56BE62C674DE800FE4DDF /* UserService.swift */,
@@ -441,6 +474,7 @@
 				E4F56BD72C673C6E00FE4DDF /* MainTabType.swift in Sources */,
 				E48131A32C6CFABB00A72BEF /* PhotoPickerService.swift in Sources */,
 				E4F56BCB2C649D8100FE4DDF /* User.swift in Sources */,
+				E48131BB2C7244DB00A72BEF /* UploadSourceType.swift in Sources */,
 				E4F56BEA2C6753A700FE4DDF /* UserObject.swift in Sources */,
 				E4F56BFB2C6BB5BE00FE4DDF /* ErrorView.swift in Sources */,
 				E4F56BF92C6BB54800FE4DDF /* LoadingView.swift in Sources */,
@@ -451,6 +485,7 @@
 				E4F56BF72C6BB4F600FE4DDF /* PlaceholderView.swift in Sources */,
 				E4F56BFD2C6BB7DD00FE4DDF /* HomeModalDestination.swift in Sources */,
 				E4F56B492C621E9E00FE4DDF /* AuthenticatedViewModel.swift in Sources */,
+				E48131B62C7243C800A72BEF /* UploadProvider.swift in Sources */,
 				E4F56BE72C674DE900FE4DDF /* UserService.swift in Sources */,
 				E4F56BE52C674DC600FE4DDF /* UserDBRepository.swift in Sources */,
 				E4F56BDD2C673DE000FE4DDF /* ChatListiView.swift in Sources */,
@@ -463,6 +498,7 @@
 				E48131982C6CA80200A72BEF /* MyProfileViewModel.swift in Sources */,
 				E4F56BB72C6362DF00FE4DDF /* AuthenticationService.swift in Sources */,
 				E4F56BEE2C67555800FE4DDF /* Constant.swift in Sources */,
+				E48131B82C72443600A72BEF /* UploadService.swift in Sources */,
 				E4F56BC32C6492ED00FE4DDF /* LoginButtonStyle.swift in Sources */,
 				E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */,
 				E4F56BD12C65F78100FE4DDF /* randomNonceString.swift in Sources */,
