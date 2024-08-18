@@ -12,6 +12,8 @@
 		E481319F2C6CB1FB00A72BEF /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481319E2C6CB1FB00A72BEF /* MyProfileDescEditView.swift */; };
 		E48131A32C6CFABB00A72BEF /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131A22C6CFABB00A72BEF /* PhotoPickerService.swift */; };
 		E48131A62C6CFBB500A72BEF /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48131A52C6CFBB500A72BEF /* PhotoImage.swift */; };
+		E48131AE2C72435400A72BEF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E48131AD2C72435400A72BEF /* FirebaseStorage */; };
+		E48131B02C72435400A72BEF /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E48131AF2C72435400A72BEF /* FirebaseStorageCombine-Community */; };
 		E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */; };
 		E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */; };
 		E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */; };
@@ -110,10 +112,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F56BE22C674A4400FE4DDF /* FirebaseDatabase in Frameworks */,
+				E48131B02C72435400A72BEF /* FirebaseStorageCombine-Community in Frameworks */,
 				E4F56BAF2C63602C00FE4DDF /* FirebaseAuth in Frameworks */,
 				E4F56BB12C63602C00FE4DDF /* FirebaseFirestore in Frameworks */,
 				E4F56BC62C649B8C00FE4DDF /* GoogleSignIn in Frameworks */,
 				E4F56BC82C649B8C00FE4DDF /* GoogleSignInSwift in Frameworks */,
+				E48131AE2C72435400A72BEF /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +373,8 @@
 				E4F56BC52C649B8C00FE4DDF /* GoogleSignIn */,
 				E4F56BC72C649B8C00FE4DDF /* GoogleSignInSwift */,
 				E4F56BE12C674A4400FE4DDF /* FirebaseDatabase */,
+				E48131AD2C72435400A72BEF /* FirebaseStorage */,
+				E48131AF2C72435400A72BEF /* FirebaseStorageCombine-Community */,
 			);
 			productName = MessengerApp;
 			productReference = E4F56B262C60E42A00FE4DDF /* MessengerApp.app */;
@@ -700,6 +706,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E48131AD2C72435400A72BEF /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		E48131AF2C72435400A72BEF /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
 		E4F56BAE2C63602C00FE4DDF /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
