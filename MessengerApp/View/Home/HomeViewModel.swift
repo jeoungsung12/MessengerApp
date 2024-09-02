@@ -15,6 +15,7 @@ class HomeViewModel : ObservableObject {
         case requestContacts
         case presentMyProfileView
         case presentOtherProfileView(String)
+        case goToChat(User)
     }
     
     
@@ -23,13 +24,15 @@ class HomeViewModel : ObservableObject {
     @Published var phase: Phase = .notRequested
     @Published var modalDestination: HomeModalDestination?
     
-    private var userId: String
+    var userId: String
     private var container : DIContainer
+    private var navigationRouter: NavigationRouter
     private var subscriptions = Set<AnyCancellable>()
     
-    init(container: DIContainer, userId: String) {
+    init(container: DIContainer, userId: String, navigationRouter: NavigationRouter) {
         self.container = container
         self.userId = userId
+        self.navigationRouter = navigationRouter
     }
     
     func send(action: Action) {
@@ -67,11 +70,18 @@ class HomeViewModel : ObservableObject {
                     self?.users = users
                 }.store(in: &subscriptions)
 
-
         case .presentMyProfileView:
             self.modalDestination = .myProfile
         case let .presentOtherProfileView(userId):
             self.modalDestination = .otherProfile(userId)
+        case let .goToChat(otherUser):
+            container.service.chatRoomSerice.createChatRoomIfNeeded(myUserId: userId, otherUserId: otherUser.id, otherUserName: otherUser.name)
+                .sink { completion in
+                    
+                } receiveValue: { [weak self] chatRoom in
+                    self?.navigationRouter.push(to: .chat)
+                }.store(in: &subscriptions)
+
         }
     }
 }

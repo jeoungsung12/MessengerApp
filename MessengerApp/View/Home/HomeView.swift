@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var container : DIContainer
+    @EnvironmentObject var navigationRouter: NavigationRouter
     @StateObject var viewModel : HomeViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationRouter.destinations) {
             contentView
                 .fullScreenCover(item: $viewModel.modalDestination) {
                     switch $0 {
                     case .myProfile:
-                        MyProfileView()
+                        MyProfileView(viewModel: .init(container: container, userId: viewModel.userId))
                     case let .otherProfile(userId):
-                        OtherProfileView()
+                        OtherProfileView(viewModel: .init(userId: viewModel.userId, container: container)) { otherUserInfo in
+                            viewModel.send(action: .goToChat(otherUserInfo))
+                        }
+                    }
+                }
+                .navigationDestination(for: NavigationDestination.self) {
+                    switch $0 {
+                    case .chat:
+                        ChatView()
+                    case .search:
+                        SearchView()
                     }
                 }
         }
@@ -52,48 +64,47 @@ struct HomeView: View {
     }
     
     var loadedView: some View {
-        NavigationStack {
-            ScrollView {
-                profileView
-                    .padding(.bottom, 30)
-                searchButton
-                    .padding(.bottom, 30)
-                
-                HStack {
-                    Text("친구")
-                        .font(.system(size: 14))
-                        .foregroundColor(.black)
-                    Spacer()
-                }
-                .padding(.horizontal, 30)
-                
-                if viewModel.users.isEmpty {
-                    Spacer(minLength: 89)
-                    emptyView
-                } else {
-                    LazyVStack {
-                        ForEach(viewModel.users, id: \.id) { user in
-                            Button {
-                                viewModel.send(action: .presentOtherProfileView(user.id))
-                            } label: {
-                                HStack(spacing: 8) {
-                                    Image("person")
-                                        .resizable()
-                                        .frame(width: 40, height: 40)
-                                        .clipShape(Circle())
-                                    Text(user.name)
-                                        .font(.system(size: 12))
-                                        .foregroundColor(.black)
-                                    Spacer()
-                                }
+        ScrollView {
+            profileView
+                .padding(.bottom, 30)
+            searchButton
+                .padding(.bottom, 30)
+            
+            HStack {
+                Text("친구")
+                    .font(.system(size: 14))
+                    .foregroundColor(.black)
+                Spacer()
+            }
+            .padding(.horizontal, 30)
+            
+            if viewModel.users.isEmpty {
+                Spacer(minLength: 89)
+                emptyView
+            } else {
+                LazyVStack {
+                    ForEach(viewModel.users, id: \.id) { user in
+                        Button {
+                            viewModel.send(action: .presentOtherProfileView(user.id))
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image("person")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                Text(user.name)
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.black)
+                                Spacer()
                             }
-                            .padding(.horizontal, 30)
                         }
+                        .padding(.horizontal, 30)
                     }
                 }
             }
         }
     }
+
     
     var profileView: some View {
         HStack {
@@ -114,25 +125,28 @@ struct HomeView: View {
         }
         .padding(.horizontal, 30)
         .onTapGesture {
-            
+            viewModel.send(action: .presentMyProfileView)
         }
     }
+    
     var searchButton : some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(.clear)
-                .frame(height: 36)
-                .background(Color.Color4)
-                .cornerRadius(5)
-            HStack {
-                Text("검색")
-                    .font(.system(size: 12))
-                    .foregroundColor(.black)
-                Spacer()
+        NavigationLink(value: NavigationDestination.search) {
+            ZStack {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(height: 36)
+                    .background(Color.Color4)
+                    .cornerRadius(5)
+                HStack {
+                    Text("검색")
+                        .font(.system(size: 12))
+                        .foregroundColor(.black)
+                    Spacer()
+                }
+                .padding(.leading, 22)
             }
-            .padding(.leading, 22)
+            .padding(.horizontal, 30)
         }
-        .padding(.horizontal, 30)
     }
     var emptyView: some View {
         VStack {
@@ -163,7 +177,12 @@ struct HomeView: View {
 }
 
 struct HomeView_Preview: PreviewProvider {
+    static let container = DIContainer(service: StubService())
+    static let navigationRouter: NavigationRouter = .init()
+    
     static var previews: some View {
-        HomeView(viewModel: .init(container: .init(service: StubService()), userId: ""))
+        HomeView(viewModel: .init(container: Self.container, userId: "", navigationRouter: Self.navigationRouter))
+            .environmentObject(Self.navigationRouter)
+            .environmentObject(Self.container)
     }
 }
