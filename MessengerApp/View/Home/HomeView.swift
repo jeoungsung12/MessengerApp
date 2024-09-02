@@ -62,7 +62,6 @@ struct HomeView: View {
             ErrorView()
         }
     }
-    
     var loadedView: some View {
         ScrollView {
             profileView
