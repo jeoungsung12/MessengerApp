@@ -11,14 +11,20 @@ struct MainTabView: View {
     @State private var selectedTab : MainTabType = .home
     @EnvironmentObject var container : DIContainer
     @EnvironmentObject var authViewModel : AuthenticatedViewModel
+    @EnvironmentObject var navigationRouter: NavigationRouter
     
+//    init() {
+//        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.black)
+//    }
     var body: some View {
         TabView(selection: $selectedTab)  {
             ForEach(MainTabType.allCases, id: \.self) { tab in
                 Group {
                     switch tab {
                     case .home:
-                        HomeView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
+                        HomeView(viewModel: .init(container: container, userId: authViewModel.userId ?? "", navigationRouter: navigationRouter))
+                            .environmentObject(navigationRouter)
+                            .environmentObject(container)
                     case .chat:
                         ChatListiView()
                     case .phone:
@@ -33,11 +39,18 @@ struct MainTabView: View {
         }
         .tint(.black)
     }
-    init() {
-        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.black)
+}
+
+struct MainTabView_Preview: PreviewProvider {
+    static let container = DIContainer(service: StubService())
+    static let navigationRouter: NavigationRouter = .init()
+    static let authViewModel = AuthenticatedViewModel(container: Self.container)
+    
+    static var previews: some View {
+        MainTabView()
+            .environmentObject(Self.authViewModel)
+            .environmentObject(Self.container)
+            .environmentObject(Self.navigationRouter)
     }
 }
 
-#Preview {
-    MainTabView()
-}

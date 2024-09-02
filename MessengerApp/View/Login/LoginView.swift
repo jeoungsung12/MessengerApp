@@ -44,6 +44,7 @@ struct LoginView: View {
             .cornerRadius(5)
             .frame(height: 50)
             .padding(.horizontal, 15)
+            .padding(.bottom, 30)
 
         }
         .navigationBarBackButtonHidden()
