@@ -32,6 +32,10 @@
 		E4EA254D2C858C6D00DC5D55 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA254C2C858C6D00DC5D55 /* NavigationRouter.swift */; };
 		E4EA25512C858E3600DC5D55 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA25502C858E3600DC5D55 /* ChatView.swift */; };
 		E4EA25532C858E4E00DC5D55 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA25522C858E4E00DC5D55 /* SearchView.swift */; };
+		E4EA25572C859E2700DC5D55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4EA25562C859E2700DC5D55 /* GoogleService-Info.plist */; };
+		E4EA25592C859FCD00DC5D55 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA25582C859FCD00DC5D55 /* ChatListViewModel.swift */; };
+		E4EA255B2C85A1E500DC5D55 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA255A2C85A1E500DC5D55 /* SearchButton.swift */; };
+		E4EA255D2C85A2AE00DC5D55 /* NavigationRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA255C2C85A2AE00DC5D55 /* NavigationRoutingView.swift */; };
 		E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */; };
 		E4F56B2C2C60E42A00FE4DDF /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */; };
 		E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F56B2D2C60E42C00FE4DDF /* Assets.xcassets */; };
@@ -58,7 +62,7 @@
 		E4F56BD32C65F7A000FE4DDF /* sha256.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD22C65F7A000FE4DDF /* sha256.swift */; };
 		E4F56BD72C673C6E00FE4DDF /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD62C673C6E00FE4DDF /* MainTabType.swift */; };
 		E4F56BDA2C673DAC00FE4DDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BD92C673DAC00FE4DDF /* HomeView.swift */; };
-		E4F56BDD2C673DE000FE4DDF /* ChatListiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BDC2C673DE000FE4DDF /* ChatListiView.swift */; };
+		E4F56BDD2C673DE000FE4DDF /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BDC2C673DE000FE4DDF /* ChatListView.swift */; };
 		E4F56BDF2C67406A00FE4DDF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BDE2C67406A00FE4DDF /* HomeViewModel.swift */; };
 		E4F56BE22C674A4400FE4DDF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E4F56BE12C674A4400FE4DDF /* FirebaseDatabase */; };
 		E4F56BE52C674DC600FE4DDF /* UserDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F56BE42C674DC600FE4DDF /* UserDBRepository.swift */; };
@@ -100,6 +104,10 @@
 		E4EA254C2C858C6D00DC5D55 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		E4EA25502C858E3600DC5D55 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		E4EA25522C858E4E00DC5D55 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		E4EA25562C859E2700DC5D55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4EA25582C859FCD00DC5D55 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		E4EA255A2C85A1E500DC5D55 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		E4EA255C2C85A2AE00DC5D55 /* NavigationRoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoutingView.swift; sourceTree = "<group>"; };
 		E4F56B262C60E42A00FE4DDF /* MessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerAppApp.swift; sourceTree = "<group>"; };
 		E4F56B2B2C60E42A00FE4DDF /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -125,7 +133,7 @@
 		E4F56BD22C65F7A000FE4DDF /* sha256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sha256.swift; sourceTree = "<group>"; };
 		E4F56BD62C673C6E00FE4DDF /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
 		E4F56BD92C673DAC00FE4DDF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E4F56BDC2C673DE000FE4DDF /* ChatListiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListiView.swift; sourceTree = "<group>"; };
+		E4F56BDC2C673DE000FE4DDF /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		E4F56BDE2C67406A00FE4DDF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E4F56BE42C674DC600FE4DDF /* UserDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBRepository.swift; sourceTree = "<group>"; };
 		E4F56BE62C674DE800FE4DDF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -247,6 +255,7 @@
 			children = (
 				E4EA254A2C8587CD00DC5D55 /* NavigationDestination.swift */,
 				E4EA254C2C858C6D00DC5D55 /* NavigationRouter.swift */,
+				E4EA255C2C85A2AE00DC5D55 /* NavigationRoutingView.swift */,
 			);
 			path = Navi;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 			children = (
 				E4F56BCE2C65F54700FE4DDF /* MessengerApp.entitlements */,
 				E4F56B3D2C62154500FE4DDF /* Info.plist */,
+				E4EA25562C859E2700DC5D55 /* GoogleService-Info.plist */,
 				E4F56BB22C63604700FE4DDF /* AppDelegate.swift */,
 				E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */,
 				E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */,
@@ -433,7 +443,8 @@
 		E4F56BDB2C673DCF00FE4DDF /* ChatList */ = {
 			isa = PBXGroup;
 			children = (
-				E4F56BDC2C673DE000FE4DDF /* ChatListiView.swift */,
+				E4F56BDC2C673DE000FE4DDF /* ChatListView.swift */,
+				E4EA25582C859FCD00DC5D55 /* ChatListViewModel.swift */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -472,6 +483,7 @@
 				E4F56BF62C6BB4F600FE4DDF /* PlaceholderView.swift */,
 				E4F56BF82C6BB54800FE4DDF /* LoadingView.swift */,
 				E4F56BFA2C6BB5BE00FE4DDF /* ErrorView.swift */,
+				E4EA255A2C85A1E500DC5D55 /* SearchButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -558,6 +570,7 @@
 			files = (
 				E4F56B312C60E42C00FE4DDF /* Preview Assets.xcassets in Resources */,
 				E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */,
+				E4EA25572C859E2700DC5D55 /* GoogleService-Info.plist in Resources */,
 				E4F56B3F2C6215A400FE4DDF /* Launch Screen.storyboard in Resources */,
 				E4F56B382C620ECE00FE4DDF /* Colors.xcassets in Resources */,
 			);
@@ -594,7 +607,7 @@
 				E4EA253D2C857AB800DC5D55 /* OtherProfileViewModel.swift in Sources */,
 				E4F56BE52C674DC600FE4DDF /* UserDBRepository.swift in Sources */,
 				E48131C42C73238A00A72BEF /* DiskStorage.swift in Sources */,
-				E4F56BDD2C673DE000FE4DDF /* ChatListiView.swift in Sources */,
+				E4F56BDD2C673DE000FE4DDF /* ChatListView.swift in Sources */,
 				E4F56B452C621DE600FE4DDF /* Services.swift in Sources */,
 				E4EA254D2C858C6D00DC5D55 /* NavigationRouter.swift in Sources */,
 				E4F56B422C621DC100FE4DDF /* DIContainer.swift in Sources */,
@@ -611,16 +624,19 @@
 				E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */,
 				E48131C22C7322CB00A72BEF /* MemoryStorage.swift in Sources */,
 				E4F56BD12C65F78100FE4DDF /* randomNonceString.swift in Sources */,
+				E4EA255D2C85A2AE00DC5D55 /* NavigationRoutingView.swift in Sources */,
 				E4EA25512C858E3600DC5D55 /* ChatView.swift in Sources */,
 				E4EA25432C8582E500DC5D55 /* ChatRoomObject.swift in Sources */,
 				E4F56BC12C636DF600FE4DDF /* LoginView.swift in Sources */,
 				E4F56B3C2C62148800FE4DDF /* Color + Extension.swift in Sources */,
+				E4EA255B2C85A1E500DC5D55 /* SearchButton.swift in Sources */,
 				E48131C62C732A3F00A72BEF /* URLImageView.swift in Sources */,
 				E4F56BCD2C649DE300FE4DDF /* ServiceError.swift in Sources */,
 				E4F56C002C6BB94E00FE4DDF /* MyProfileView.swift in Sources */,
 				E4F56BBD2C6365A800FE4DDF /* MainTabView.swift in Sources */,
 				E48131C92C732A6000A72BEF /* URLImageViewModel.swift in Sources */,
 				E4EA254B2C8587CD00DC5D55 /* NavigationDestination.swift in Sources */,
+				E4EA25592C859FCD00DC5D55 /* ChatListViewModel.swift in Sources */,
 				E4EA25462C85846E00DC5D55 /* ChatRoomService.swift in Sources */,
 				E4EA25532C858E4E00DC5D55 /* SearchView.swift in Sources */,
 				E481319F2C6CB1FB00A72BEF /* MyProfileDescEditView.swift in Sources */,
