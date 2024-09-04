@@ -32,6 +32,7 @@
 		E49CA0092C884612001F43A3 /* ChatDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49CA0082C884612001F43A3 /* ChatDBRepository.swift */; };
 		E49CA00B2C88472D001F43A3 /* ChatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49CA00A2C88472D001F43A3 /* ChatObject.swift */; };
 		E49CA00D2C884858001F43A3 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49CA00C2C884858001F43A3 /* ChatService.swift */; };
+		E49CA00F2C8867A9001F43A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E49CA00E2C8867A9001F43A3 /* GoogleService-Info.plist */; };
 		E4EA253D2C857AB800DC5D55 /* OtherProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA253C2C857AB800DC5D55 /* OtherProfileViewModel.swift */; };
 		E4EA253F2C857CEB00DC5D55 /* OtherProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA253E2C857CEB00DC5D55 /* OtherProfileMenuType.swift */; };
 		E4EA25412C85828D00DC5D55 /* ChatRoomDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA25402C85828D00DC5D55 /* ChatRoomDBRepository.swift */; };
@@ -113,6 +114,7 @@
 		E49CA0082C884612001F43A3 /* ChatDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDBRepository.swift; sourceTree = "<group>"; };
 		E49CA00A2C88472D001F43A3 /* ChatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatObject.swift; sourceTree = "<group>"; };
 		E49CA00C2C884858001F43A3 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		E49CA00E2C8867A9001F43A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4EA253C2C857AB800DC5D55 /* OtherProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewModel.swift; sourceTree = "<group>"; };
 		E4EA253E2C857CEB00DC5D55 /* OtherProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileMenuType.swift; sourceTree = "<group>"; };
 		E4EA25402C85828D00DC5D55 /* ChatRoomDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomDBRepository.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				E4F56BCE2C65F54700FE4DDF /* MessengerApp.entitlements */,
 				E4F56B3D2C62154500FE4DDF /* Info.plist */,
+				E49CA00E2C8867A9001F43A3 /* GoogleService-Info.plist */,
 				E4F56BB22C63604700FE4DDF /* AppDelegate.swift */,
 				E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */,
 				E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */,
@@ -597,6 +600,7 @@
 			files = (
 				E4F56B312C60E42C00FE4DDF /* Preview Assets.xcassets in Resources */,
 				E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */,
+				E49CA00F2C8867A9001F43A3 /* GoogleService-Info.plist in Resources */,
 				E4F56B3F2C6215A400FE4DDF /* Launch Screen.storyboard in Resources */,
 				E4F56B382C620ECE00FE4DDF /* Colors.xcassets in Resources */,
 			);
