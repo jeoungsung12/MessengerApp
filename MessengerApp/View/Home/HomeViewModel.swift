@@ -75,7 +75,7 @@ class HomeViewModel : ObservableObject {
         case let .presentOtherProfileView(userId):
             self.modalDestination = .otherProfile(userId)
         case let .goToChat(otherUser):
-            container.service.chatRoomSerice.createChatRoomIfNeeded(myUserId: userId, otherUserId: otherUser.id, otherUserName: otherUser.name)
+            container.service.chatRoomService.createChatRoomIfNeeded(myUserId: userId, otherUserId: otherUser.id, otherUserName: otherUser.name)
                 .sink { completion in
                     
                 } receiveValue: { [weak self] chatRoom in

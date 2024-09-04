@@ -15,3 +15,9 @@ struct Chat: Hashable, Identifiable {
     var date: Date
     var id: String { chatId }
 }
+
+extension Chat {
+    func toObject() -> ChatObject {
+        .init(chatId: chatId, userId: userId, message: message, photoURL: photoURL, date: date.timeIntervalSince1970)
+    }
+}

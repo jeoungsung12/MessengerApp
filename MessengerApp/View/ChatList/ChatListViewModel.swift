@@ -28,7 +28,7 @@ class ChatListViewModel: ObservableObject {
     func send(action: Action) {
         switch action {
         case .load:
-            container.service.chatRoomSerice.loadChatRooms(myUserId: userId)
+            container.service.chatRoomService.loadChatRooms(myUserId: userId)
                 .sink { completion in
                     
                 } receiveValue: { [weak self] chatRooms in

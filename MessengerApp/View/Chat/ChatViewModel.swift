@@ -11,7 +11,8 @@ import Combine
 class ChatViewModel: ObservableObject {
     
     enum Action {
-        
+        case load
+        case addChat(String)
     }
     
     @Published var chatDataList: [ChatData] = []
@@ -32,9 +33,15 @@ class ChatViewModel: ObservableObject {
         self.otherUserId = otherUserId
         self.container = container
         
-        updateChatDataList(.init(chatId: "chat1_id", userId: "user1_id", message: "안녕하세요", date: Date()))
-        updateChatDataList(.init(chatId: "chat2_id", userId: "user2_id", message: "감사해요", date: Date()))
-        updateChatDataList(.init(chatId: "chat3_id", userId: "user1_id", message: "잘있어요", date: Date()))
+        bind()
+    }
+    
+    func bind() {
+        container.service.chatService.observeChat(chatRoomId: self.chatRoomId)
+            .sink { [weak self] chat in
+                guard let chat else { return }
+                self?.updateChatDataList(chat)
+            }.store(in: &subscriptions)
     }
     
     func updateChatDataList(_ chat: Chat) {
@@ -53,6 +60,28 @@ class ChatViewModel: ObservableObject {
     }
     
     func send(action: Action) {
-        
+        switch action {
+        case .load:
+            Publishers.Zip(container.service.userService.getUser(userId: myUserId),
+                           container.service.userService.getUser(userId: otherUserId))
+            .sink { completion in
+                
+            } receiveValue: { [weak self] myUser, otherUser in
+                self?.myUser = myUser
+                self?.otherUser = otherUser
+            }.store(in: &subscriptions)
+
+            return
+        case let .addChat(message):
+            let chat: Chat = .init(chatId: UUID().uuidString, userId: myUserId, message: message, date: Date())
+            
+            container.service.chatService.addChat(chat, to: chatRoomId)
+                .sink { completion in
+                    
+                } receiveValue: { [weak self] _ in
+                    self?.message = ""
+                }.store(in: &subscriptions)
+
+        }
     }
 }
