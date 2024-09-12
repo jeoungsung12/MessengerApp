@@ -5,20 +5,27 @@
 //  Created by 정성윤 on 9/4/24.
 //
 
-import Foundation
 import Combine
+import SwiftUI
+import PhotosUI
 
 class ChatViewModel: ObservableObject {
     
     enum Action {
         case load
         case addChat(String)
+        case uploadImage(PhotosPickerItem?)
     }
     
     @Published var chatDataList: [ChatData] = []
     @Published var myUser: User?
     @Published var otherUser: User?
     @Published var message: String = ""
+    @Published var imageSelection: PhotosPickerItem? {
+        didSet {
+            send(action: .uploadImage(imageSelection))
+        }
+    }
     
     private let chatRoomId: String
     private let myUserId: String
@@ -76,10 +83,33 @@ class ChatViewModel: ObservableObject {
             let chat: Chat = .init(chatId: UUID().uuidString, userId: myUserId, message: message, date: Date())
             
             container.service.chatService.addChat(chat, to: chatRoomId)
+                .flatMap { chat in
+                    self.container.service.chatRoomService.updateChatRoomLastMessage(chatRoomId: self.chatRoomId, myUserId: self.myUserId, myUserName: self.myUser?.name ?? "", otherUserId: self.otherUserId, lastMessage: chat.lastMessage)
+                }
                 .sink { completion in
                     
                 } receiveValue: { [weak self] _ in
                     self?.message = ""
+                }.store(in: &subscriptions)
+        case let .uploadImage(pickerItem):
+            
+            guard let pickerItem else { return }
+            
+            container.service.photoPickerService.loadTransferable(from: pickerItem)
+                .flatMap { data in
+                    self.container.service.uploadService.uploadImage(source: .chat(chatRoomId: self.chatRoomId), data: data)
+                }
+                .flatMap { url in
+                    let chat: Chat = .init(chatId: UUID().uuidString, userId: self.myUserId, photoURL: url.absoluteString, date: Date())
+                    return self.container.service.chatService.addChat(chat, to: self.chatRoomId)
+                }
+                .flatMap { chat in
+                    self.container.service.chatRoomService.updateChatRoomLastMessage(chatRoomId: self.chatRoomId, myUserId: self.myUserId, myUserName: self.myUser?.name ?? "", otherUserId: self.otherUserId, lastMessage: chat.lastMessage)
+                }
+                .sink { completion in
+                    
+                } receiveValue: { _ in
+                    
                 }.store(in: &subscriptions)
 
         }
