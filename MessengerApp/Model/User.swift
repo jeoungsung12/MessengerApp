@@ -13,6 +13,7 @@ struct User {
     var phoneNumber : String?
     var profileURL : String?
     var description : String?
+    var fcmToken: String?
 }
 
 extension User {
@@ -21,7 +22,8 @@ extension User {
               name: name,
               phoneNumber: phoneNumber,
               profileURL: profileURL,
-              description: description
+              description: description,
+              fcmToken: fcmToken
         )
     }
 }
