@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChatRoom: Codable {
+struct ChatRoom: Hashable {
     var chatRoomId: String
     var lastMessage: String?
     var otherUserName: String

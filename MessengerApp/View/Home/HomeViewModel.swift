@@ -37,6 +37,7 @@ class HomeViewModel : ObservableObject {
     
     func send(action: Action) {
         switch action {
+            
         case .load:
             phase = .loading
             container.service.userService.getUser(userId: userId)
@@ -54,6 +55,7 @@ class HomeViewModel : ObservableObject {
                     self?.phase = .success
                     self?.users = users
                 }.store(in: &subscriptions )
+            
         case .requestContacts:
             container.service.contactService.fetchContacts()
                 .flatMap { users in
@@ -72,16 +74,20 @@ class HomeViewModel : ObservableObject {
 
         case .presentMyProfileView:
             self.modalDestination = .myProfile
+            
         case let .presentOtherProfileView(userId):
             self.modalDestination = .otherProfile(userId)
+            
         case let .goToChat(otherUser):
-            container.service.chatRoomSerice.createChatRoomIfNeeded(myUserId: userId, otherUserId: otherUser.id, otherUserName: otherUser.name)
+            container.service.chatRoomService.createChatRoomIfNeeded(myUserId: userId, otherUserId: otherUser.id, otherUserName: otherUser.name)
                 .sink { completion in
                     
                 } receiveValue: { [weak self] chatRoom in
-                    self?.navigationRouter.push(to: .chat)
+                    if let myUserId = self?.userId{
+                        self?.navigationRouter.push(to: .chat(chatRoomId: chatRoom.chatRoomId, myUserId: myUserId, otherUserId: otherUser.id))
+                    }
                 }.store(in: &subscriptions)
-
+            
         }
     }
 }
