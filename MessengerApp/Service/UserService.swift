@@ -15,6 +15,7 @@ protocol UserServiceType {
     func getUser(userId: String) async throws -> User
     func updateDescription(userId: String, value: String) async throws
     func updateProfileURL(userId: String, urlString: String) async throws
+    func updateFCMToken(userId: String, fcmToken: String) -> AnyPublisher<Void, ServiceError>
     func loadUser(id: String) -> AnyPublisher<[User], ServiceError>
     
 }
@@ -51,6 +52,12 @@ class UserService : UserServiceType {
     
     func updateProfileURL(userId: String, urlString: String) async throws {
         try await dbRepository.updateUser(userId: userId, key: "profileURL", value: urlString)
+    }
+    
+    func updateFCMToken(userId: String, fcmToken: String) -> AnyPublisher<Void, ServiceError> {
+        dbRepository.updateUser(id: userId, key: "fcmToken", value: fcmToken)
+            .mapError { ServiceError.error($0) }
+            .eraseToAnyPublisher()
     }
     
     func loadUser(id: String) -> AnyPublisher<[User], ServiceError> {
@@ -90,6 +97,10 @@ class StubUserService : UserServiceType {
     
     func updateProfileURL(userId: String, urlString: String) async throws {
         return
+    }
+    
+    func updateFCMToken(userId: String, fcmToken: String) -> AnyPublisher<Void, ServiceError> {
+        Empty().eraseToAnyPublisher()
     }
     
     func loadUser(id: String) -> AnyPublisher<[User], ServiceError> {

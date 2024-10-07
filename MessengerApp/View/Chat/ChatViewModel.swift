@@ -86,6 +86,10 @@ class ChatViewModel: ObservableObject {
                 .flatMap { chat in
                     self.container.service.chatRoomService.updateChatRoomLastMessage(chatRoomId: self.chatRoomId, myUserId: self.myUserId, myUserName: self.myUser?.name ?? "", otherUserId: self.otherUserId, lastMessage: chat.lastMessage)
                 }
+                .flatMap { _ -> AnyPublisher<Bool, Never> in
+                    guard let fcmToken = self.otherUser?.fcmToken else { return Empty().eraseToAnyPublisher() }
+                    return self.container.service.pushNotificationService.sendPushNotification(fcmToken: fcmToken, message: message)
+                }
                 .sink { completion in
                     
                 } receiveValue: { [weak self] _ in
@@ -105,6 +109,10 @@ class ChatViewModel: ObservableObject {
                 }
                 .flatMap { chat in
                     self.container.service.chatRoomService.updateChatRoomLastMessage(chatRoomId: self.chatRoomId, myUserId: self.myUserId, myUserName: self.myUser?.name ?? "", otherUserId: self.otherUserId, lastMessage: chat.lastMessage)
+                }
+                .flatMap { _ -> AnyPublisher<Bool, Never> in
+                    guard let fcmToken = self.otherUser?.fcmToken else { return Empty().eraseToAnyPublisher() }
+                    return self.container.service.pushNotificationService.sendPushNotification(fcmToken: fcmToken, message: "사진")
                 }
                 .sink { completion in
                     

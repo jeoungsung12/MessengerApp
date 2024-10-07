@@ -22,6 +22,9 @@ struct AuthenticatedView: View {
                 MainTabView(navigationRouter: .init())
                     .environmentObject(authViewModel)
                     .environmentObject(navigationRouter)
+                    .onAppear {
+                        authViewModel.send(action: .requestPushNotificationService)
+                    }
             }
         }
         .onAppear {

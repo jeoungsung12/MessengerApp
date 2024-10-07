@@ -32,7 +32,10 @@
 		E49CA0092C884612001F43A3 /* ChatDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49CA0082C884612001F43A3 /* ChatDBRepository.swift */; };
 		E49CA00B2C88472D001F43A3 /* ChatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49CA00A2C88472D001F43A3 /* ChatObject.swift */; };
 		E49CA00D2C884858001F43A3 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49CA00C2C884858001F43A3 /* ChatService.swift */; };
-		E49CA00F2C8867A9001F43A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E49CA00E2C8867A9001F43A3 /* GoogleService-Info.plist */; };
+		E4C2642E2CB3B3E000E01480 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E4C2642D2CB3B3E000E01480 /* FirebaseMessaging */; };
+		E4C264302CB3B65000E01480 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C2642F2CB3B65000E01480 /* PushNotificationService.swift */; };
+		E4C264322CB3C6E900E01480 /* PushNotificationProvoiderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C264312CB3C6E900E01480 /* PushNotificationProvoiderType.swift */; };
+		E4C264342CB3C75200E01480 /* PushObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C264332CB3C75200E01480 /* PushObject.swift */; };
 		E4EA253D2C857AB800DC5D55 /* OtherProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA253C2C857AB800DC5D55 /* OtherProfileViewModel.swift */; };
 		E4EA253F2C857CEB00DC5D55 /* OtherProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA253E2C857CEB00DC5D55 /* OtherProfileMenuType.swift */; };
 		E4EA25412C85828D00DC5D55 /* ChatRoomDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EA25402C85828D00DC5D55 /* ChatRoomDBRepository.swift */; };
@@ -115,7 +118,9 @@
 		E49CA0082C884612001F43A3 /* ChatDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDBRepository.swift; sourceTree = "<group>"; };
 		E49CA00A2C88472D001F43A3 /* ChatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatObject.swift; sourceTree = "<group>"; };
 		E49CA00C2C884858001F43A3 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
-		E49CA00E2C8867A9001F43A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4C2642F2CB3B65000E01480 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
+		E4C264312CB3C6E900E01480 /* PushNotificationProvoiderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationProvoiderType.swift; sourceTree = "<group>"; };
+		E4C264332CB3C75200E01480 /* PushObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushObject.swift; sourceTree = "<group>"; };
 		E4EA253C2C857AB800DC5D55 /* OtherProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewModel.swift; sourceTree = "<group>"; };
 		E4EA253E2C857CEB00DC5D55 /* OtherProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileMenuType.swift; sourceTree = "<group>"; };
 		E4EA25402C85828D00DC5D55 /* ChatRoomDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomDBRepository.swift; sourceTree = "<group>"; };
@@ -177,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C2642E2CB3B3E000E01480 /* FirebaseMessaging in Frameworks */,
 				E4F56BE22C674A4400FE4DDF /* FirebaseDatabase in Frameworks */,
 				E48131B02C72435400A72BEF /* FirebaseStorageCombine-Community in Frameworks */,
 				E4F56BAF2C63602C00FE4DDF /* FirebaseAuth in Frameworks */,
@@ -214,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				E48131B42C7243B000A72BEF /* Upload */,
+				E4C264312CB3C6E900E01480 /* PushNotificationProvoiderType.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -334,11 +341,11 @@
 			children = (
 				E4F56BCE2C65F54700FE4DDF /* MessengerApp.entitlements */,
 				E4F56B3D2C62154500FE4DDF /* Info.plist */,
-				E49CA00E2C8867A9001F43A3 /* GoogleService-Info.plist */,
 				E4F56BB22C63604700FE4DDF /* AppDelegate.swift */,
 				E4F56B292C60E42A00FE4DDF /* MessengerAppApp.swift */,
 				E4F56B3E2C6215A400FE4DDF /* Launch Screen.storyboard */,
 				E48131B32C7243A300A72BEF /* Provider */,
+				E4F56BE82C67539F00FE4DDF /* DTO */,
 				E4F56BE32C674D9B00FE4DDF /* Repository */,
 				E4F56B462C621E8500FE4DDF /* View */,
 				E4F56BCF2C65F75C00FE4DDF /* Util */,
@@ -402,6 +409,7 @@
 				E4F56BB62C6362DF00FE4DDF /* AuthenticationService.swift */,
 				E4F56C052C6C925100FE4DDF /* ContactService.swift */,
 				E4F56BCC2C649DE300FE4DDF /* ServiceError.swift */,
+				E4C2642F2CB3B65000E01480 /* PushNotificationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -498,7 +506,6 @@
 		E4F56BE32C674D9B00FE4DDF /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				E4F56BE82C67539F00FE4DDF /* DTO */,
 				E4F56BE42C674DC600FE4DDF /* UserDBRepository.swift */,
 				E4EA25402C85828D00DC5D55 /* ChatRoomDBRepository.swift */,
 				E49CA0082C884612001F43A3 /* ChatDBRepository.swift */,
@@ -513,6 +520,7 @@
 				E4F56BEB2C6753F700FE4DDF /* DBError.swift */,
 				E4EA25422C8582E500DC5D55 /* ChatRoomObject.swift */,
 				E49CA00A2C88472D001F43A3 /* ChatObject.swift */,
+				E4C264332CB3C75200E01480 /* PushObject.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -562,6 +570,7 @@
 				E4F56BE12C674A4400FE4DDF /* FirebaseDatabase */,
 				E48131AD2C72435400A72BEF /* FirebaseStorage */,
 				E48131AF2C72435400A72BEF /* FirebaseStorageCombine-Community */,
+				E4C2642D2CB3B3E000E01480 /* FirebaseMessaging */,
 			);
 			productName = MessengerApp;
 			productReference = E4F56B262C60E42A00FE4DDF /* MessengerApp.app */;
@@ -611,7 +620,6 @@
 			files = (
 				E4F56B312C60E42C00FE4DDF /* Preview Assets.xcassets in Resources */,
 				E4F56B2E2C60E42C00FE4DDF /* Assets.xcassets in Resources */,
-				E49CA00F2C8867A9001F43A3 /* GoogleService-Info.plist in Resources */,
 				E4F56B3F2C6215A400FE4DDF /* Launch Screen.storyboard in Resources */,
 				E4F56B382C620ECE00FE4DDF /* Colors.xcassets in Resources */,
 			);
@@ -664,11 +672,14 @@
 				E48131A62C6CFBB500A72BEF /* PhotoImage.swift in Sources */,
 				E4F56BDA2C673DAC00FE4DDF /* HomeView.swift in Sources */,
 				E48131982C6CA80200A72BEF /* MyProfileViewModel.swift in Sources */,
+				E4C264302CB3B65000E01480 /* PushNotificationService.swift in Sources */,
 				E4F56BB72C6362DF00FE4DDF /* AuthenticationService.swift in Sources */,
 				E4EA253F2C857CEB00DC5D55 /* OtherProfileMenuType.swift in Sources */,
+				E4C264342CB3C75200E01480 /* PushObject.swift in Sources */,
 				E4F56BEE2C67555800FE4DDF /* Constant.swift in Sources */,
 				E48131B82C72443600A72BEF /* UploadService.swift in Sources */,
 				E4F56BC32C6492ED00FE4DDF /* LoginButtonStyle.swift in Sources */,
+				E4C264322CB3C6E900E01480 /* PushNotificationProvoiderType.swift in Sources */,
 				E4F56B2A2C60E42A00FE4DDF /* MessengerAppApp.swift in Sources */,
 				E48131C22C7322CB00A72BEF /* MemoryStorage.swift in Sources */,
 				E4F56BD12C65F78100FE4DDF /* randomNonceString.swift in Sources */,
@@ -935,6 +946,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		E4C2642D2CB3B3E000E01480 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F56BAD2C63602C00FE4DDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		E4F56BAE2C63602C00FE4DDF /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

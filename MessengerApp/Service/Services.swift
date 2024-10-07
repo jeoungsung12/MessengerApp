@@ -16,6 +16,7 @@ protocol ServiceType {
     var imageCacheService: ImageCacheServiceType { get set }
     var chatRoomService: ChatRoomServiceType { get set }
     var chatService: ChatServiceType { get set }
+    var pushNotificationService: PushNotificationServiceType { get set }
 }
 
 class Services : ServiceType {
@@ -27,6 +28,7 @@ class Services : ServiceType {
     var imageCacheService: ImageCacheServiceType
     var chatRoomService: ChatRoomServiceType
     var chatService: ChatServiceType
+    var pushNotificationService: PushNotificationServiceType
     
     init() {
         self.authService = AuthenticationService()
@@ -37,6 +39,7 @@ class Services : ServiceType {
         self.imageCacheService = ImageCacheService(memoryStorage: MemoryStorage(), diskStorage: DiskStorage())
         self.chatRoomService = ChatRoomService(dbRepository: ChatRoomDBRepository())
         self.chatService = ChatService(dbRepository: ChatDBRepository())
+        self.pushNotificationService = PushNotificationService(provider: PushNotificationProvoider.self as! PushNotificationServiceType)
     }
 }
 
@@ -49,4 +52,5 @@ class StubService: ServiceType {
     var imageCacheService: ImageCacheServiceType = StubImageCacheService()
     var chatRoomService: ChatRoomServiceType = StubChatRoomService()
     var chatService: ChatServiceType = StubChatService()
+    var pushNotificationService: PushNotificationServiceType = StubPushNotificationService()
 }
