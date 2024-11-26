@@ -12,8 +12,9 @@ class SearchViewModel: ObservableObject {
     
     enum Action {
         case requestQuery(String)
+        case clearSearchResult
     }
-    
+    @Published var shouldBecomeFirstResponder: Bool = false
     @Published var searchText: String = ""
     @Published var searchResult: [User] = []
     
@@ -33,7 +34,11 @@ class SearchViewModel: ObservableObject {
             .debounce(for: .seconds(0.2), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .sink { [weak self] text in
-                self?.send(action: .requestQuery(text))
+                if text.isEmpty {
+                    self?.send(action: .clearSearchResult)
+                } else {
+                    self?.send(action: .requestQuery(text))
+                }
             }.store(in: &subscriptions)
     }
     
@@ -46,6 +51,8 @@ class SearchViewModel: ObservableObject {
                 } receiveValue: { [weak self] users in
                     self?.searchResult = users
                 }.store(in: &subscriptions)
+        case .clearSearchResult:
+            searchResult = []
         }
     }
 }

@@ -10,8 +10,11 @@ import SwiftUI
 
 struct SearchBar: UIViewRepresentable {
     @Binding var searchText: String
-    init(text: Binding<String>) {
+    @Binding var shouldBecomeFirstResponder: Bool
+    init(text: Binding<String>, shouldBecomeFirstResponder: Binding<Bool>) {
         self._searchText = text
+        self._shouldBecomeFirstResponder = shouldBecomeFirstResponder
+        
     }
     
     func makeCoordinator() -> Coordinator {

@@ -78,7 +78,13 @@ class UserService : UserServiceType {
     }
     
     func filterUsers(with queryString: String, userId: String) -> AnyPublisher<[User], ServiceError> {
-        Empty().eraseToAnyPublisher()
+        dbRepository.filterUsers(with: queryString)
+            .map { $0
+                .map { $0.toModel() }
+                .filter { $0.id != userId }
+            }
+            .mapError { .error($0) }
+            .eraseToAnyPublisher()
     }
 }
 
